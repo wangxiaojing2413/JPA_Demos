@@ -1,0 +1,31 @@
+<persistence>
+   <persistence-unit name="JPAImplementationTest"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider><!-- 不同版本的hibernate provider不一样 -->
+		<class>entity.TitlesPK</class>
+		<class>entity.Titles</class>
+		<class>entity.SalariesPK</class>
+		<class>entity.Salaries</class>
+		<class>entity.Employees</class>
+		<class>entity.DeptManagerPK</class>
+		<class>entity.DeptManager</class>
+		<class>entity.DeptEmpPK</class>
+		<class>entity.DeptEmp</class>
+		<class>entity.Departments</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="hbwang" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jpacompare" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<!-- cache configuration -->
+
+			<!-- alternatively to <class> and <property> declarations, you can use 
+				a regular hibernate.cfg.xml file -->
+			<!-- property name="hibernate.ejb.cfgfile" value="/org/hibernate/ejb/test/hibernate.cfg.xml"/ -->
+		</properties>
+	</persistence-unit>
+</persistence>
